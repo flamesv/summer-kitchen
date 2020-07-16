@@ -7,6 +7,8 @@
 		
 		function search(str) {
 
+			if (str.length < 1) return false;
+
 			let words = str.split(' ');
 
 			for (var z = document.getElementsByClassName('text').length - 1; z >= 0; z--) {
@@ -37,7 +39,7 @@
 </head>
 <body>
 	<form onsubmit="search(searchQuery.value); return false;">
-		<input type="text" id="searchQuery">
+		<input type="text" id="searchQuery" onkeyup="search(searchQuery.value);">
 		<input type="submit" value="поиск">
 	</form>
 	<div>
